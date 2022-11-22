@@ -1,0 +1,26 @@
+﻿<Page x:Class="FlowersShopApp.Pages.MainMenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FlowersShopApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MainMenuPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Margin="5" VerticalAlignment="Center">
+            <TextBlock x:Name="TBTitle" TextAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            <Button Visibility="Collapsed" x:Name="BBouquetList" Click="BBouquetList_Click" Content="Bouquet List" Margin="5"/>
+            <Button Visibility="Collapsed" x:Name="BOrderHistoryList" Click="BOrderHistoryList_Click" Content="Order History" Margin="5"/>
+            <Button Visibility="Collapsed" x:Name="BFlowersList" Click="BFlowersList_Click" Content="Flowers List" Margin="5"/>
+            <Button Visibility="Collapsed" x:Name="BPackageList" Click="BPackageList_Click" Content="Package List" Margin="5"/>
+            <Button x:Name="BExit" Click="BExit_Click" FontWeight="Bold" Content="Exit" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Page>

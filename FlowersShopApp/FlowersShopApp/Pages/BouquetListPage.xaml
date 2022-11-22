@@ -1,0 +1,54 @@
+﻿<Page x:Class="FlowersShopApp.Pages.BouquetListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FlowersShopApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BouquetListPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="BBack" Click="BBack_Click" Content="Back" HorizontalAlignment="Left" Margin="5" Width="100"/>
+        <ListView x:Name="LVBouquet" Grid.Row="1" Margin="5">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Pink" CornerRadius="5,5,5,5" BorderThickness="2">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding Picture}"/>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="Package" TextAlignment="Center" FontWeight="Bold"/>
+                                <TextBlock TextAlignment="Center" Text="{Binding Package.Name}"/>
+                                <TextBlock Text="Flowers Quantity" TextAlignment="Center" FontWeight="Bold"/>
+                                <TextBlock TextAlignment="Center" Text="{Binding TotalFlowersQuantity}"/>
+                                <TextBlock Text="Cost" TextAlignment="Center" FontWeight="Bold"/>
+                                <TextBlock TextAlignment="Center" Text="{Binding Cost}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <WrapPanel HorizontalAlignment="Center" Grid.Row="2">
+            <Button x:Name="BAdd" Click="BAdd_Click" Content="Add" Margin="5" Width="100"/>
+            <Button x:Name="BEdit" Click="BEdit_Click" Content="Edit" Margin="5" Width="100"/>
+            <Button x:Name="BDelete" Click="BDelete_Click" Content="Delete" Margin="5" Width="100"/>
+            <Button x:Name="BBuy" Click="BBuy_Click" Content="Buy" Margin="5" Width="100"/>
+        </WrapPanel>
+    </Grid>
+</Page>

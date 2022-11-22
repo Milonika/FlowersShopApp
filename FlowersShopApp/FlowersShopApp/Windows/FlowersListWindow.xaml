@@ -1,0 +1,29 @@
+﻿<Window x:Class="FlowersShopApp.Windows.FlowersListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlowersShopApp.Windows"
+        mc:Ignorable="d"
+        Title="FlowersListWindow" Height="437" Width="332" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock TextAlignment="Center" Text="Select Flower"/>
+        <DataGrid SelectionChanged="DGFlower_SelectionChanged" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" x:Name="DGFlower" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Picture" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Picture}" RenderOptions.BitmapScalingMode="HighQuality" Height="50"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Cost" Binding="{Binding Cost}" Width="auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
